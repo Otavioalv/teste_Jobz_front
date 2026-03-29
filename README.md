@@ -21,11 +21,11 @@
 - [ ] Login (mock)
     - [ ] Tela simples
     - [ ] Persistência de sessão
-<br/>
+
 - [ ] Dashboard
     - [ ] Exibir saldo
     - [ ] Listar transações (mock)
-<br/>
+
 - [ ] Transferência
     - [ ] Formulário com validação
     - [ ] Atualizar saldo em tela
