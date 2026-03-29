@@ -1,7 +1,7 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import LoginPage from '../features/auth/LoginPage';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import DashboardPage from '../features/dashboard/DashboardPage';
 import TransferPage from '../features/transfer/TransferPage';
+import LoginPage from '../features/auth/LoginPage';
 
 
 
@@ -10,11 +10,18 @@ export default function AppRoutes() {
     <BrowserRouter>
       <Routes>
         
-        <Route 
-            path="/" 
-            element={<LoginPage />} 
+        <Route
+            path="/"
+            element={
+                <Navigate to="/login" />
+            }
         />
         
+        <Route 
+            path="/login" 
+            element={<LoginPage />} 
+        />
+
         <Route 
             path="/dashboard" 
             element={<DashboardPage />} 

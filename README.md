@@ -7,7 +7,7 @@
 - [x] Vite
 - [ ] Tailwind + CVA
 - [ ] shadcn/ui + Radix
-- [ ] React Router
+- [x] React Router
 - [ ] React Query
 - [ ] Zustand
 - [ ] React Hook Form + Zod
