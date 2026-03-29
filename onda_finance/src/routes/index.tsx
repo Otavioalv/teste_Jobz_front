@@ -1,7 +1,11 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import DashboardPage from '../features/dashboard/DashboardPage';
-import TransferPage from '../features/transfer/TransferPage';
-import LoginPage from '../features/auth/LoginPage';
+
+import DashboardPage from '@/features/dashboard/DashboardPage';
+import TransferPage from '@/features/transfer/TransferPage';
+import LoginPage from '@/features/auth/LoginPage';
+
+
+
 
 
 

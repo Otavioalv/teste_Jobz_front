@@ -14,9 +14,9 @@ export default function LoginPage() {
     }
 
   return (
-    <div className="flex h-screen items-center justify-center">
+    <div className="flex h-screen items-center justify-center ">
         <div className="w-full max-w-sm">
-            <div>
+            <div className="text-center text-lg font-bold">
                 <h1>Login</h1>
             </div>
 
@@ -29,7 +29,7 @@ export default function LoginPage() {
                         rules={{ required: "Email obrigatório" }}
                         render={({ field, fieldState }) => (
                         <div>
-                            <label>Email</label>
+                            <label>EMAIL ADDRESS</label>
                             
                             <input {...field} type="email" />
                             
@@ -48,7 +48,7 @@ export default function LoginPage() {
                         rules={{ required: "Senha obrigatória" }}
                         render={({ field, fieldState }) => (
                         <div>
-                            <label>Senha</label>
+                            <label>PASSWORD</label>
                             
                             <input {...field} type="password" />
                             

@@ -5,8 +5,8 @@
 
 - [x] React + TypeScript
 - [x] Vite
-- [ ] Tailwind + CVA
-- [ ] shadcn/ui + Radix
+- [x] Tailwind + CVA
+- [x] shadcn/ui + Radix
 - [x] React Router
 - [ ] React Query
 - [ ] Zustand
