@@ -1,5 +1,5 @@
 import { ContainerScreenAlignCenter } from "@/components/ContainerScreenAlignCenter"
-import { loginSchema, type LoginFormData } from "./schemas/loginSchema"
+import { loginSchema, type LoginFormData } from "./schemas/loginScheme"
 import { Card, CardTitle } from "@/components/ui/card"
 import { FieldGroup } from "@/components/ui/field"
 import { FormField } from "./components/FormField"
@@ -36,17 +36,18 @@ export default function LoginPage() {
                     <FieldGroup>
                         <FormField
                             control={control}
-                            label="EMAIL ADDRESS"
+                            label="EMAIL"
+                            type="email"
                             name={"email"}
                             placeholder="name@company.com"
                         />
 
                         <FormField
                             control={control}
-                            label="PASSWORD"
+                            label="SENHA"
                             name={"password"}
                             type="password"
-                            placeholder="password"
+                            placeholder="Digite sua senha"
                         />
 
                         <Button 
