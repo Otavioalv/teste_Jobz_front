@@ -21,12 +21,15 @@
 - [ ] Login (mock)
     - [X] Tela simples
     - [ ] Persistência de sessão
+    - [ ] Criar mock
 
 - [ ] Dashboard
-    - [ ] Exibir saldo
-    - [ ] Listar transações (mock)
+    - [x] Exibir saldo
+    - [x] Listar transações (mock)
+    - [ ] Criar mock
 
 - [ ] Transferência
     - [ ] Formulário com validação
     - [ ] Atualizar saldo em tela
+    - [ ] Criar mock
 
