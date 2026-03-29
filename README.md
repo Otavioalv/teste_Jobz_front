@@ -19,7 +19,7 @@
 # Funcionalidades Aplicadas
 
 - [ ] Login (mock)
-    - [ ] Tela simples
+    - [X] Tela simples
     - [ ] Persistência de sessão
 
 - [ ] Dashboard
