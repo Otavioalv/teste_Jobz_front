@@ -1,16 +1,23 @@
-import { ContainerScreenAlignCenter } from "@/components/ContainerScreenAlignCenter"
-import { loginSchema, type LoginFormData } from "./schemas/loginScheme"
-import { FormField } from "@/components/form/FormField"
-import { Card, CardTitle } from "@/components/ui/card"
-import { FieldGroup } from "@/components/ui/field"
-import { Button } from "@/components/ui/button"
-import { useForm} from "react-hook-form"
+import { ContainerScreenAlignCenter } from "@/components/ContainerScreenAlignCenter";
+import { loginSchema, type LoginFormData } from "./schemas/loginScheme";
+import { FormField } from "@/components/form/FormField";
+import { Card, CardTitle } from "@/components/ui/card";
+import { FieldGroup } from "@/components/ui/field";
+import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
+import { useForm} from "react-hook-form";
 
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useLogin } from "./hooks"
 import { LoadingOverlay } from "@/components/LoadingOverlay"
+import { useAuthStore } from "@/stores/authStore";
+import { useEffect } from "react";
 
 export default function LoginPage() {
+    const navigate = useNavigate();
+
+    const {token} = useAuthStore();
+
     const { control, handleSubmit } = useForm<LoginFormData>({
         resolver: zodResolver(loginSchema),
         defaultValues: {
@@ -27,6 +34,11 @@ export default function LoginPage() {
     const onSubmit = async(data: LoginFormData) => {
         mutateLogin(data);
     }
+
+    useEffect(() => {
+        if(token) navigate("/dashboard");
+    }, [navigate, token]);
+
 
     return (
         <ContainerScreenAlignCenter>
