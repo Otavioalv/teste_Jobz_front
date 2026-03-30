@@ -18,6 +18,7 @@ export const useLogin = () => {
         
         onSuccess: (data) => {
             login(data.token);
+            alert("Login realizado com sucesso");
             
             queryClient.clear();
             queryClient.invalidateQueries({ queryKey: ["transactions"] });
