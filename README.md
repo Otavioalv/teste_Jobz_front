@@ -12,7 +12,7 @@
 - [x] Zustand
 - [x] React Hook Form + Zod
 - [x] Axios
-- [ ] Vitest
+- [x] Vitest
 
 ---
 

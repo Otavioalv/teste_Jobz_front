@@ -40,7 +40,6 @@ export const getBalance = async ({token}: IGetBalanceParams): Promise<IGetBalanc
     } catch (err) {
         // Fazer tratamento de erro para chamada real da API
         if (err instanceof Error) {
-            alert(err.message);
             // Retorna pro react query
             throw err;
         }
@@ -89,7 +88,6 @@ export const getTransactionHistory = async ({token}: IgetTransactionHistoryParam
     } catch (err) {
         // Fazer tratamento de erro para chamada real da API
         if (err instanceof Error) {
-            alert(err.message);
             // Retorna pro react query
             throw err;
         }

@@ -53,7 +53,6 @@ export const fetchLogin = async ({email, password}: IFetchLoginParams): Promise<
     } catch (err) {
         // Fazer tratamento de erro para chamada real da API
         if (err instanceof Error) {
-            alert(err.message);
             // Retorna pro react query
             throw err;
         }

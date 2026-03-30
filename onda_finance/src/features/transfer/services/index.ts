@@ -62,7 +62,6 @@ export const transferBalance = async ({amount, token}: ItransferBalanceParams): 
     } catch (err) {
         // Fazer tratamento de erro para chamada real da API
         if (err instanceof Error) {
-            alert(err.message);
             // Retorna pro react query
             throw err;
         }
