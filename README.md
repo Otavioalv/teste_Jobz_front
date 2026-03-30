@@ -23,13 +23,13 @@
     - [x] Persistência de sessão
     - [x] Criar mock
 
-- [ ] Dashboard
+- [x] Dashboard
     - [x] Exibir saldo
     - [x] Listar transações (mock)
     - [x] Criar mock
 
-- [ ] Transferência
+- [x] Transferência
     - [x] Formulário com validação
-    - [ ] Atualizar saldo em tela
+    - [x] Atualizar saldo em tela
     - [X] Criar mock
 

@@ -20,6 +20,10 @@ export interface IFetchLoginResponse {
 
 export const fetchLogin = async ({email, password}: IFetchLoginParams): Promise<IFetchLoginResponse> => {
     try {   
+        // exemplo do uso do axios para chamada
+        // const response = await api.post("/login", { email, password });
+        // return response.data;
+
         // SIMULAÇÃO DE CHAMADA DE API E TRATAMENTO 
         await new Promise((r) => setTimeout(r, 1000))
 
@@ -61,6 +65,9 @@ export const fetchLogin = async ({email, password}: IFetchLoginParams): Promise<
 // LOGOUT CASO SEJA COOKIE HTTPONLY
 export const fetchLogout = async () => {
     try {
+        // exemplo do uso do axios para chamada
+        // const response = await api.post("/logout", { email, password });
+        // return response.data;
         console.log("Fazer logout, caso seja cookie httponly");
     }catch(err) {
         console.log(err);

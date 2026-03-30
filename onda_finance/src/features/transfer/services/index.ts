@@ -9,16 +9,20 @@ export interface ItransferBalanceParams {
 export type ItransferBalanceResponse = ITransactionDataType;
 
 export const transferBalance = async ({amount, token}: ItransferBalanceParams): Promise<ItransferBalanceResponse> => {
-    try {   
-        /* 
-        // simular chamada axios
-        const getDadosLocais = () => {
-        return axios.get('/url-falsa')
-            .then(response => {
-            return { data: "dados simulados" }; // Simula uma resposta
-            });
-        };
-        */
+    try { 
+        // exemplo do uso do axios para chamada
+        // const response = await api.post("/transfer",
+        //      {
+        //          recipient,
+        //          amount,
+        //      },
+        //      {
+        //          headers: {
+        //              Authorization: `Bearer ${token}`,
+        //          },
+        //      }
+        // );
+        // return response.data;
 
         // SIMULAÇÃO DE CHAMADA DE API E TRATAMENTO 
         await new Promise((r) => setTimeout(r, 1000));

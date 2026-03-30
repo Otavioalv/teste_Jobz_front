@@ -11,6 +11,14 @@ export interface IGetBalanceResponse {
 
 export const getBalance = async ({token}: IGetBalanceParams): Promise<IGetBalanceResponse> => {
     try {   
+        // exemplo do uso do axios para chamada
+        // const response = await api.get("/balance", {
+        //      headers: {
+        //          Authorization: `Bearer ${token}`,
+        //     },
+        // });
+        // return response.data;
+
         // SIMULAÇÃO DE CHAMADA DE API E TRATAMENTO 
         await new Promise((r) => setTimeout(r, 1000));
 
@@ -52,6 +60,14 @@ export interface IgetTransactionHistoryResponse {
 }
 export const getTransactionHistory = async ({token}: IgetTransactionHistoryParams): Promise<IgetTransactionHistoryResponse> => {
     try {   
+        // exemplo do uso do axios para chamada
+        // const response = await api.get("/transactions", {
+        //      headers: {
+        //          Authorization: `Bearer ${token}`,
+        //     },
+        // });
+        // return response.data;
+
         // SIMULAÇÃO DE CHAMADA DE API E TRATAMENTO 
         await new Promise((r) => setTimeout(r, 1000));
 
