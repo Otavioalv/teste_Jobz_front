@@ -8,6 +8,7 @@ import { useForm} from "react-hook-form"
 
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useLogin } from "./hooks"
+import { LoadingOverlay } from "@/components/LoadingOverlay"
 
 export default function LoginPage() {
     const { control, handleSubmit } = useForm<LoginFormData>({
@@ -19,7 +20,8 @@ export default function LoginPage() {
     })
 
     const {
-        mutate: mutateLogin
+        mutate: mutateLogin,
+        isPending: isPendingLogin
     } = useLogin();
 
     const onSubmit = async(data: LoginFormData) => {
@@ -28,6 +30,11 @@ export default function LoginPage() {
 
     return (
         <ContainerScreenAlignCenter>
+            
+            <LoadingOverlay
+                isLoading={isPendingLogin}
+            />
+
             <Card className="w-full sm:max-w-137.5">
                 <CardTitle className="text-center text-lg font-bold">
                     Login
