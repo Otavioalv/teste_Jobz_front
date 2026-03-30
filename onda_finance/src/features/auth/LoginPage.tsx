@@ -1,8 +1,8 @@
 import { ContainerScreenAlignCenter } from "@/components/ContainerScreenAlignCenter"
 import { loginSchema, type LoginFormData } from "./schemas/loginScheme"
+import { FormField } from "@/components/form/FormField"
 import { Card, CardTitle } from "@/components/ui/card"
 import { FieldGroup } from "@/components/ui/field"
-import { FormField } from "./components/FormField"
 import { Button } from "@/components/ui/button"
 import { useForm} from "react-hook-form"
 

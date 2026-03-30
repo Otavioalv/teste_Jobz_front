@@ -1,21 +1,20 @@
 import { ContainerScreenAlignCenter } from "@/components/ContainerScreenAlignCenter"
+import { transferSchema } from "./schemas/transferScheme"
+import { FormField } from "@/components/form/FormField"
 import { Card, CardTitle } from "@/components/ui/card"
+import { zodResolver } from "@hookform/resolvers/zod"
 import { FieldGroup } from "@/components/ui/field"
-import { FormField } from "../auth/components/FormField"
 import { Button } from "@/components/ui/button"
 import { useForm } from "react-hook-form"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { transferSchema } from "./schemas/transferScheme"
+
 import type {TransferInput} from "./schemas/transferScheme"
 
 export default function TransferPage() {
-    // o tipo do meio e "contexto"
-    // tipar corretamente caso haja uso de contextos para
     const { control, handleSubmit } = useForm<TransferInput>({
         resolver: zodResolver(transferSchema),
         defaultValues: {
             amount: "",
-            recipient: "otavio@gmail.com"
+            recipient: ""
         }
     });
 
