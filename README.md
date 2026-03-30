@@ -11,7 +11,7 @@
 - [x] React Query
 - [x] Zustand
 - [x] React Hook Form + Zod
-- [ ] Axios
+- [x] Axios
 - [ ] Vitest
 
 ---
