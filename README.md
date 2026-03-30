@@ -8,8 +8,8 @@
 - [x] Tailwind + CVA
 - [x] shadcn/ui + Radix
 - [x] React Router
-- [ ] React Query
-- [ ] Zustand
+- [x] React Query
+- [x] Zustand
 - [x] React Hook Form + Zod
 - [ ] Axios
 - [ ] Vitest
@@ -21,15 +21,15 @@
 - [ ] Login (mock)
     - [X] Tela simples
     - [ ] Persistência de sessão
-    - [ ] Criar mock
+    - [x] Criar mock
 
 - [ ] Dashboard
     - [x] Exibir saldo
     - [x] Listar transações (mock)
-    - [ ] Criar mock
+    - [x] Criar mock
 
 - [ ] Transferência
-    - [ ] Formulário com validação
+    - [x] Formulário com validação
     - [ ] Atualizar saldo em tela
     - [ ] Criar mock
 

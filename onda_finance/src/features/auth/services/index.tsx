@@ -1,15 +1,20 @@
 // import de conexão ou conexões com API(s)
-
 import { usersDataList } from "@/stores/mockData";
+import type { IUser } from "@/types";
 
 
-interface IFetchLoginParams {
+export interface IFetchLoginParams {
     email: string,
     password: string,
 }
 
+export interface IFetchLoginResponse {
+    token: string,
+    user: Omit<IUser, "password">,
+}
 
-export const fetchLogin = async ({email, password}: IFetchLoginParams) => {
+
+export const fetchLogin = async ({email, password}: IFetchLoginParams): Promise<IFetchLoginResponse> => {
     try {   
         // SIMULAÇÃO DE CHAMADA DE API E TRATAMENTO 
         await new Promise((r) => setTimeout(r, 1000))
@@ -38,9 +43,6 @@ export const fetchLogin = async ({email, password}: IFetchLoginParams) => {
             // Retorna pro react query
             throw err;
         }
-        console.error(err);
-
-        alert(`Erro desconhecido`);
         // Retorna pro react query
         throw new Error("Erro desconhecido");
     }
