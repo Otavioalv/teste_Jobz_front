@@ -10,7 +10,7 @@
 - [x] React Router
 - [ ] React Query
 - [ ] Zustand
-- [ ] React Hook Form + Zod
+- [x] React Hook Form + Zod
 - [ ] Axios
 - [ ] Vitest
 
