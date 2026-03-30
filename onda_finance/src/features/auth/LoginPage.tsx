@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { useForm} from "react-hook-form"
 
 import { zodResolver } from "@hookform/resolvers/zod"
+import { fetchLogin } from "./services"
 
 export default function LoginPage() {
     const { control, handleSubmit } = useForm<LoginFormData>({
@@ -17,8 +18,9 @@ export default function LoginPage() {
         }
     })
 
-    const onSubmit = (data: LoginFormData) => {
-        console.log(data)
+    const onSubmit = async(data: LoginFormData) => {
+        // console.log(data)
+        await fetchLogin(data);        
     }
 
     return (

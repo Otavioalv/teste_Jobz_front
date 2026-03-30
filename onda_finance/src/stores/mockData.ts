@@ -5,19 +5,19 @@ export const usersDataList:IUser[] = [
     {
         id: "4",
         email: "otavio@gmail.com",
-        senha: "Otavio@padrao12",
+        password: "Otavio@padrao12",
         balance: "3000.12"
     },
     {
         id: "2",
         email: "tiago@gmail.com",
-        senha: "Tiago@padrao12",
+        password: "Tiago@padrao12",
         balance: "2300.12"
     },
     {
         id: "11",
         email: "juliana@gmail.com",
-        senha: "Juliana@padrao12",
+        password: "Juliana@padrao12",
         balance: "4932.12"
     },
 
