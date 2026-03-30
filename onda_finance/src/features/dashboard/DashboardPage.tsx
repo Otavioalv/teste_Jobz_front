@@ -13,16 +13,24 @@ export default function DashboardPage() {
     
     const {
         data: dataBalance,
-        isLoading: isLoadingBalance
+        isLoading: isLoadingBalance,
+        isFetching: isFetchingBalance,
     } = useGetBalance();
 
     const {
         data: dataTransactionHistory,
-        isLoading: isLoadingTransactionHistory
+        isLoading: isLoadingTransactionHistory,
+        isFetching: isFetchingTransactionHistory
     } = useGetTransactionHistory();
 
     
-    if(isLoadingBalance || isLoadingTransactionHistory) return <LoadingOverlay isLoading={true}/>
+    if(
+        isLoadingBalance 
+        || isLoadingTransactionHistory
+        || isFetchingBalance
+        || isFetchingTransactionHistory
+
+    ) return <LoadingOverlay isLoading={true}/>
 
     return (    
         <ContainerScreen>
