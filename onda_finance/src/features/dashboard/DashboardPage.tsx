@@ -1,74 +1,39 @@
 import { TransactionHistoryTable } from "./components/TransactionHistoryTable";
 import { DashboardHeaderCard } from "./components/DashboardHeaderCard";
 
-import type { ITransactionDataType } from "@/types";
+
 import { ContainerScreen } from "@/components/ContainerScreen";
 import { ContainerCard } from "@/components/ContainerCard";
 
 
-export default function DashboardPage() {
-    const invoices: ITransactionDataType[] = [
-        {
-            id: "1",
-            type: "received",
-            value: "20",
-            date: "10-20-2024",
-            userId: "12",
-        },
-        {
-            id: "2",
-            type: "received",
-            value: "20",
-            date: "10-20-2024",
-            userId: "12",
-        },
-        {
-            id: "3",
-            type: "received",
-            value: "20",
-            date: "10-20-2024",
-            userId: "12",
-        },
-        {
-            id: "4",
-            type: "received",
-            value: "20",
-            date: "10-20-2024",
-            userId: "12",
-        },
-        {
-            id: "5",
-            type: "received",
-            value: "20",
-            date: "10-20-2024",
-            userId: "12",
-        },
-        {
-            id: "6",
-            type: "received",
-            value: "20",
-            date: "10-20-2024",
-            userId: "12",
-        },
-        {
-            id: "7",
-            type: "received",
-            value: "20",
-            date: "10-20-2024",
-            userId: "12",
-        },
-    ]
+import { useGetBalance, useGetTransactionHistory } from "./hooks";
+import { LoadingOverlay } from "@/components/LoadingOverlay";
 
-    return (
+export default function DashboardPage() {
+    
+    const {
+        data: dataBalance,
+        isLoading: isLoadingBalance
+    } = useGetBalance();
+
+    const {
+        data: dataTransactionHistory,
+        isLoading: isLoadingTransactionHistory
+    } = useGetTransactionHistory();
+
+    
+    if(isLoadingBalance || isLoadingTransactionHistory) return <LoadingOverlay isLoading={true}/>
+
+    return (    
         <ContainerScreen>
             <ContainerCard>
                 <DashboardHeaderCard
-                    balanceValue="2394.34"
+                    balanceValue={dataBalance?.balance || ""}
                 />
 
                 <section className="w-full">
                     <TransactionHistoryTable
-                        transactions={invoices}
+                        transactions={dataTransactionHistory?.transactions || []}
                     />
                 </section>
             </ContainerCard>

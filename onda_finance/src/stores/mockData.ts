@@ -64,4 +64,5 @@ export const transactionsDataList: ITransactionDataType[] = [
     { id: "38", type: "transfer", value: "88.00", date: "2026-02-19", userId: "2" },
     { id: "39", type: "received", value: "15.50", date: "2026-02-18", userId: "11" },
     { id: "40", type: "transfer", value: "250.00", date: "2026-02-17", userId: "4" },
+    { id: "41", type: "transfer", value: "3782.00", date: "2026-02-20", userId: "4" },
 ];

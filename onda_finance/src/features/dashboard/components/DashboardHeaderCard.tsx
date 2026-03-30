@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui/button";
 import { Card, CardTitle } from "@/components/ui/card";
-
+import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 interface IDashboardHeaderCardProps {
     balanceValue: string, 
@@ -9,6 +9,8 @@ interface IDashboardHeaderCardProps {
 export const DashboardHeaderCard = ({
     balanceValue
 }: IDashboardHeaderCardProps) => {
+    const navigate = useNavigate();
+
     return (
         <header className="flex flex-col gap-10 w-full justify-center items-center">
             <h1 className="text-xl text-start w-full">
@@ -24,7 +26,10 @@ export const DashboardHeaderCard = ({
                     </CardTitle>
                 </div>
 
-                <Button className="cursor-pointer">
+                <Button 
+                    className="cursor-pointer"
+                    onClick={() => navigate("/transferencia")}
+                >
                     TRANSFERIR DINHEIRO
                 </Button>
             </Card>
