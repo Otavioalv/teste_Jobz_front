@@ -1,6 +1,10 @@
-// import de conexão ou conexões com API(s)
-import { usersDataList } from "@/stores/mockData";
+// import de conexão(es) com API(s)
+// import { api } from "@/services/financeAPI";
+
 import type { IUser } from "@/types";
+
+// dados de mock
+import { usersDataList } from "@/stores/mockData";
 
 
 export interface IFetchLoginParams {
@@ -26,6 +30,12 @@ export const fetchLogin = async ({email, password}: IFetchLoginParams): Promise<
         if(!user) {
             throw new Error("Email ou senha inválidos");
         }
+
+        // possivel chamada axios 
+        // const response = await api.post("/login", {
+        //     email,
+        //     password,
+        // });
 
         return {
             token: `mocked-jwt-token-id:${user.id}`,
