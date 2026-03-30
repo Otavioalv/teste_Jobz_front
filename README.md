@@ -18,9 +18,9 @@
 
 # Funcionalidades Aplicadas
 
-- [ ] Login (mock)
-    - [X] Tela simples
-    - [ ] Persistência de sessão
+- [x] Login (mock)
+    - [x] Tela simples
+    - [x] Persistência de sessão
     - [x] Criar mock
 
 - [ ] Dashboard
@@ -31,5 +31,5 @@
 - [ ] Transferência
     - [x] Formulário com validação
     - [ ] Atualizar saldo em tela
-    - [ ] Criar mock
+    - [X] Criar mock
 

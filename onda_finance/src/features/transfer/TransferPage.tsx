@@ -6,10 +6,17 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { FieldGroup } from "@/components/ui/field"
 import { Button } from "@/components/ui/button"
 import { useForm } from "react-hook-form"
+import { useTransfer } from "./hooks"
+
 
 import type {TransferInput} from "./schemas/transferScheme"
+import { LoadingOverlay } from "@/components/LoadingOverlay"
+import { useNavigate } from "react-router-dom"
+
 
 export default function TransferPage() {
+    const navigate = useNavigate();
+
     const { control, handleSubmit } = useForm<TransferInput>({
         resolver: zodResolver(transferSchema),
         defaultValues: {
@@ -18,12 +25,22 @@ export default function TransferPage() {
         }
     });
 
+    const {
+        mutate: mutateTransfer,
+        isPending: isPendingTransfer,
+    } = useTransfer();
+
+
     const onSubmit = (data: TransferInput) => {
-        console.log(data)
+        mutateTransfer({amount: data.amount});
+        navigate("/dashboard");
     }
 
     return (
         <ContainerScreenAlignCenter>
+            <LoadingOverlay
+                isLoading={isPendingTransfer}
+            />
             <Card className="w-full sm:max-w-137.5">
                 <CardTitle className="text-center text-lg font-bold">
                     Transferência
