@@ -1,10 +1,11 @@
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useAuthStore } from "@/stores/authStore";
 import { fetchLogin } from "../services";
 
 import type { IFetchLoginParams, IFetchLoginResponse } from "../services";
 
 export const useLogin = () => {
+    const queryClient = useQueryClient();
     const {login} = useAuthStore();
 
     return useMutation<IFetchLoginResponse, Error, IFetchLoginParams>({
@@ -16,11 +17,23 @@ export const useLogin = () => {
         },
         
         onSuccess: (data) => {
-            console.log("Login: ", data);
-            
             login(data.token);
-            // Invalidar queries
-            //queryClient.invalidateQueries(['user']); 
+            
+            queryClient.clear();
+            queryClient.invalidateQueries({ queryKey: ["transactions"] });
+            queryClient.invalidateQueries({ queryKey: ["balance"] });
         },
     });
+};
+
+export const useLogout = () => {
+    const queryClient = useQueryClient();
+    const { logout } = useAuthStore();
+
+    const handleLogout = () => {
+        logout();
+        queryClient.clear();
+    };
+
+    return { handleLogout };
 };

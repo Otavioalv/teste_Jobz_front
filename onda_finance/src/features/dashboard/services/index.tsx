@@ -26,7 +26,7 @@ export const getBalance = async ({token}: IGetBalanceParams): Promise<IGetBalanc
         const id = token.replace("mocked-jwt-token-id:", "");
         
         const user = usersDataList.find(
-            (u) => u.id = id
+            (u) => u.id === id
         )
 
         if(!user) {
