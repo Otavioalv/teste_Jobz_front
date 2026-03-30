@@ -1,6 +1,7 @@
 import { Card, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
+import { useAuthStore } from "@/stores/authStore";
 
 interface IDashboardHeaderCardProps {
     balanceValue: string, 
@@ -10,6 +11,8 @@ export const DashboardHeaderCard = ({
     balanceValue
 }: IDashboardHeaderCardProps) => {
     const navigate = useNavigate();
+
+    const {logout} = useAuthStore();
 
     return (
         <header className="flex flex-col gap-10 w-full justify-center items-center">
@@ -26,12 +29,22 @@ export const DashboardHeaderCard = ({
                     </CardTitle>
                 </div>
 
-                <Button 
-                    className="cursor-pointer"
-                    onClick={() => navigate("/transferencia")}
-                >
-                    TRANSFERIR DINHEIRO
-                </Button>
+
+                <div className="flex flex-col gap-2">
+                    <Button 
+                        className="cursor-pointer"
+                        onClick={() => navigate("/transferencia")}
+                    >
+                        TRANSFERIR DINHEIRO
+                    </Button>
+                    <Button
+                        className="cursor-pointer"
+                        onClick={() => logout()}
+                        variant={"outline"}
+                    >
+                        SAIR DA CONTA
+                    </Button>
+                </div>
             </Card>
         </header>
     );
