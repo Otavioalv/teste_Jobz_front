@@ -2,7 +2,8 @@ import { z } from "zod"
 
 export const loginSchema = z.object({
     email: z
-        .email("Email inválido"),
+        .email("Email inválido")
+        .nonempty("Email obrigatório"),
     password: z
         .string()
         .min(8, "Senha deve ter ao menos 8 caracteres")

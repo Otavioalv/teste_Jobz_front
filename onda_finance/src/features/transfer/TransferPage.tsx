@@ -5,18 +5,21 @@ import { FormField } from "../auth/components/FormField"
 import { Button } from "@/components/ui/button"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { transferSchema, type TransferFormData } from "./schemas/transferScheme"
+import { transferSchema } from "./schemas/transferScheme"
+import type {TransferInput} from "./schemas/transferScheme"
 
 export default function TransferPage() {
-    const { control, handleSubmit } = useForm<TransferFormData>({
+    // o tipo do meio e "contexto"
+    // tipar corretamente caso haja uso de contextos para
+    const { control, handleSubmit } = useForm<TransferInput>({
         resolver: zodResolver(transferSchema),
         defaultValues: {
-            amount: 0,
-            recipient: ""
+            amount: "",
+            recipient: "otavio@gmail.com"
         }
-    })
+    });
 
-    const onSubmit = (data: TransferFormData) => {
+    const onSubmit = (data: TransferInput) => {
         console.log(data)
     }
 
@@ -37,7 +40,7 @@ export default function TransferPage() {
                             control={control}
                             label="EMAIL DO DESTINATÁRIO"
                             type="email"
-                            name={"amount"}
+                            name={"recipient"}
                             placeholder="name@company.com"
                         />
 
@@ -45,8 +48,8 @@ export default function TransferPage() {
                             control={control}
                             label="VALOR DA TRANSFERÊNCIA"
                             placeholder="0,00"
-                            name={"recipient"}
-                            type="number"
+                            name={"amount"}
+                            type="text"
                         />
 
                         <Button
