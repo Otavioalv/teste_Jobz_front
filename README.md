@@ -46,9 +46,11 @@ http://localhost:5173/
 
 
 Em alguns casos, o Vite pode não identificar corretamente a porta 5173 e escolher outra, como 5174 ou 5175. Nesse caso, ao iniciar o projeto, o terminal mostrará algo parecido com a imagem abaixo:
+
 ![alt text](image.png)
 
 Copie o link indicado em vermelho na imagem (ou o equivalente que aparecer no seu terminal) e cole no navegador:
+
 ![alt text](image-1.png)
 
 
